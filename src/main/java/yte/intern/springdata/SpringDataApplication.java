@@ -6,9 +6,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import yte.intern.springdata.entities.Book;
-import yte.intern.springdata.entities.User;
+import yte.intern.springdata.entities.Users;
 import yte.intern.springdata.repositories.BookRepository;
-import yte.intern.springdata.repositories.UserRepository;
+import yte.intern.springdata.repositories.UsersRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -29,17 +29,17 @@ public class SpringDataApplication {
 	}
 
 	private static void userExample(ApplicationContext context) {
-		UserRepository userRepository = context.getBean(UserRepository.class);
+		UsersRepository usersRepository = context.getBean(UsersRepository.class);
 
-		userRepository.save(new User("hebele"));
+		usersRepository.save(new Users("hebele"));
 
-		System.out.println(userRepository.findByName("hebele"));
+		System.out.println(usersRepository.findByName("hebele"));
 
-		System.out.println(userRepository.findById(1L).get());
+		System.out.println(usersRepository.findById(1L).get());
 
-		userRepository.deleteById(1L);
+		usersRepository.deleteById(1L);
 
-		System.out.println(userRepository.findAll());
+		System.out.println(usersRepository.findAll());
 	}
 
 	private static void ornerkVeriEkle(ApplicationContext context) {

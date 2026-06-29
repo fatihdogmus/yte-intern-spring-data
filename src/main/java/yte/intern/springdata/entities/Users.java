@@ -15,7 +15,7 @@ import jakarta.persistence.Id;
 @Setter
 @NoArgsConstructor
 @ToString
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class User {
 
     private String name;
 
-    public User(final String name) {
+    public Users(final String name) {
         this.name = name;
     }
 }
